@@ -55,14 +55,22 @@ const categoryIcons = [
 ];
 
 const floatingIconGlyph = {
-  C: { icon: 'code2' },
-  AUTOSAR: { icon: 'shield' },
-  CAN: { icon: 'network' },
+  C: { img: 'https://skillicons.dev/icons?i=c' },
+  CPP: { img: 'https://skillicons.dev/icons?i=cpp' },
+  Python: { img: 'https://skillicons.dev/icons?i=python' },
+  //AUTOSAR: { icon: 'shield' },
+  //CAN: { icon: 'network' },
   RTOS: { icon: 'activity' },
   ARM: { icon: 'cpu' },
-  LIN: { icon: 'cable' },
-  Python: { img: 'https://cdn.simpleicons.org/python/3776AB' },
-  Docker: { img: 'https://cdn.simpleicons.org/docker/2496ED' }
+  //LIN: { icon: 'cable' },
+  Docker: { img: 'https://skillicons.dev/icons?i=docker' },
+  Github: { img: 'https://skillicons.dev/icons?i=github' },
+  Rpi: { img: 'https://skillicons.dev/icons?i=raspberrypi' },
+  Arduino: { img: 'https://skillicons.dev/icons?i=arduino' },
+  Jenkins: { img: 'https://skillicons.dev/icons?i=jenkins' },
+  Linux: { img: 'https://skillicons.dev/icons?i=linux' },
+  CMake: { img: 'https://skillicons.dev/icons?i=cmake' },
+  Vscode: { img: 'https://skillicons.dev/icons?i=vscode' }
 };
 
 const connectBrand = {

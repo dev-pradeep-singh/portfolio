@@ -196,13 +196,21 @@ const experienceData = [
 
 const floatingIcons = [
   { name: "C", color: "#A8B9CC", position: { top: "15%", left: "10%" }, delay: 0 },
-  { name: "AUTOSAR", color: "#06B6D4", position: { top: "25%", right: "15%" }, delay: 0.5 },
-  { name: "CAN", color: "#14B8A6", position: { top: "45%", left: "8%" }, delay: 1 },
+  { name: "CPP", color: "#A8B9CC", position: { top: "15%", left: "10%" }, delay: 0 },
+  { name: "Github", color: "#A8B9CC", position: { top: "15%", left: "10%" }, delay: 0 },
+  //{ name: "AUTOSAR", color: "#06B6D4", position: { top: "25%", right: "15%" }, delay: 0.5 },
+  //{ name: "CAN", color: "#14B8A6", position: { top: "45%", left: "8%" }, delay: 1 },
   { name: "RTOS", color: "#3B82F6", position: { top: "60%", right: "12%" }, delay: 1.5 },
   { name: "ARM", color: "#F59E0B", position: { top: "35%", right: "25%" }, delay: 2 },
-  { name: "LIN", color: "#10B981", position: { top: "55%", left: "18%" }, delay: 2.5 },
+  //{ name: "LIN", color: "#10B981", position: { top: "55%", left: "18%" }, delay: 2.5 },
   { name: "Python", color: "#3776AB", position: { top: "70%", right: "20%" }, delay: 3 },
-  { name: "Docker", color: "#2496ED", position: { top: "20%", left: "25%" }, delay: 3.5 }
+  { name: "Docker", color: "#2496ED", position: { top: "20%", left: "25%" }, delay: 3.5 },
+  { name: "Rpi", color: "#2496ED", position: { top: "20%", left: "25%" }, delay: 3.5 },
+  { name: "Arduino", color: "#2496ED", position: { top: "20%", left: "25%" }, delay: 3.5 },
+  { name: "Jenkins", color: "#2496ED", position: { top: "20%", left: "25%" }, delay: 3.5 },
+  { name: "Linux", color: "#2496ED", position: { top: "20%", left: "25%" }, delay: 3.5 },
+  { name: "CMake", color: "#2496ED", position: { top: "20%", left: "25%" }, delay: 3.5 },
+  { name: "Vscode", color: "#2496ED", position: { top: "20%", left: "25%" }, delay: 3.5 }
 ];
 
 const heroWords = ['automotive systems', 'reliable solutions', 'embedded software'];
