@@ -9,8 +9,8 @@ const profileData = {
   experience: "12+ Years Experience",
   email: "pradeepsingh@example.com",
   phone: "+49-15163733485",
-  linkedin: "https://www.linkedin.com/in/pradeepsinghem",
-  github: "https://github.com/pradeepsingh",
+  linkedin: "https://www.linkedin.com/in/pradeepsinghembeddedengineer",
+  github: "https://github.com/PradeepSingh-Git",
   resumeUrl: "https://customer-assets.emergentagent.com/job_09ec7e19-ef7c-4caa-94a9-9dd82346df4f/artifacts/8hlggv5p_PradeepSingh-SeniorEmbeddedSoftwareDeveloper.pdf",
   profileImage: "assets/img/profile.jpg"
 };

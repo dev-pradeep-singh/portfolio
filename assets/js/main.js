@@ -126,9 +126,6 @@ function renderNav() {
   nav.innerHTML = `
     <div class="container">
       <div class="nav-row">
-        <button class="nav-logo" data-scroll="home">
-          <span class="bracket">{</span><span class="initials">PS</span><span class="bracket">}</span>
-        </button>
         <div class="nav-links">
           ${navItems.map(item => `<button class="nav-link" data-section="${item.id}" data-scroll="${item.id}">${item.label}</button>`).join('')}
         </div>
