@@ -12,7 +12,7 @@ const profileData = {
   linkedin: "https://www.linkedin.com/in/pradeepsinghem",
   github: "https://github.com/pradeepsingh",
   resumeUrl: "https://customer-assets.emergentagent.com/job_09ec7e19-ef7c-4caa-94a9-9dd82346df4f/artifacts/8hlggv5p_PradeepSingh-SeniorEmbeddedSoftwareDeveloper.pdf",
-  profileImage: "https://customer-assets.emergentagent.com/job_09ec7e19-ef7c-4caa-94a9-9dd82346df4f/artifacts/et2e24tu_LinkedInProfilePhoto.jpg"
+  profileImage: "assets/img/profile.jpg"
 };
 
 const aboutData = {

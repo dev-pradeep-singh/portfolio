@@ -28,7 +28,7 @@ A modern, responsive portfolio website showcasing my professional journey as a S
 - Each role displays:
   - Position title
   - Company name and location
-  - Project name in teal badge
+  - Project name in emerald badge
   - Duration with calendar icon
 
 ### 🚀 Projects
@@ -58,12 +58,14 @@ A modern, responsive portfolio website showcasing my professional journey as a S
 - Hover effects and smooth transitions
 
 ### 🎨 Design Features
-- Dark navy theme (slate-950/900) with teal/cyan accents
+- Dark theme (gray-900/800) with emerald-to-blue gradient accents
+- Native system font stack (no webfont request)
+- Character-by-character typewriter effect with blinking cursor in the hero
+- Scroll-triggered fade-in reveals on every section
+- Floating brand-colored tech icon cluster in the hero
+- Per-platform brand-colored Connect cards with an animated gradient border on hover
 - Smooth scroll navigation with active section highlighting
 - Responsive design for all devices
-- Professional animations and micro-interactions
-- Grid background pattern in hero section
-- Custom scrollbar styling
 
 ## 🚀 Tech Stack
 
@@ -153,7 +155,7 @@ const skillsData = {
 ```
 
 ### Color Scheme
-Colors are plain hex values in `assets/css/style.css` (no CSS variable indirection) — search for the teal (`#2dd4bf`)/cyan (`#22d3ee`) accents or the slate background shades (`#020617`, `#0f172a`, `#1e293b`) and replace as needed.
+Colors are plain hex values in `assets/css/style.css` (no CSS variable indirection) — search for the emerald (`#34d399`)/blue (`#3b82f6`) gradient accents or the gray background shades (`#111827`, `#1f2937`, `#374151`) and replace as needed.
 
 ## 🌐 Deployment
 
@@ -188,8 +190,8 @@ This project is open source and available under the [MIT License](LICENSE).
 
 ## 🙏 Acknowledgments
 
-- Design inspiration from [praveengongada.com](https://praveengongada.com)
-- Icons from [skillicons.dev](https://skillicons.dev/)
+- Visual design system (fonts, colors, icon style, animations) adapted from [praveengongada.com](https://praveengongada.com)
+- Skill icons from [skillicons.dev](https://skillicons.dev/); hero icon cluster brand logos from [Simple Icons](https://simpleicons.org/) via cdn.simpleicons.org
 
 ## 🤝 Contributing
 
