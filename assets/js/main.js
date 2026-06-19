@@ -61,7 +61,7 @@ const floatingIconGlyph = {
   //AUTOSAR: { icon: 'shield' },
   //CAN: { icon: 'network' },
   RTOS: { icon: 'activity' },
-  ARM: { icon: 'cpu' },
+  ARM: { img: 'assets/img/icons/mcu.png' },
   //LIN: { icon: 'cable' },
   Docker: { img: 'https://skillicons.dev/icons?i=docker' },
   Github: { img: 'https://skillicons.dev/icons?i=github' },
