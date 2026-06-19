@@ -427,15 +427,30 @@ function renderExperience() {
             ${experienceData.map(exp => `
               <div class="timeline-item">
                 <div class="timeline-dot"><div class="inner-dot"></div></div>
-                <div class="card timeline-card">
+                <div class="card timeline-card"${exp.details ? ' tabindex="0" role="button" aria-expanded="false"' : ''}>
                   <div class="timeline-card-top">
                     <div>
                       <h3>${exp.position}</h3>
                       <div class="timeline-meta"><span class="company">${exp.company}</span><span>•</span><span>${exp.location}</span></div>
                       ${exp.project ? `<div class="timeline-project-badge">${exp.project}</div>` : ''}
                     </div>
-                    <div class="timeline-period">${icons.calendar}<span>${exp.period}</span></div>
+                    <div class="timeline-top-right">
+                      <div class="timeline-period">${icons.calendar}<span>${exp.period}</span></div>
+                      ${exp.details ? `<div class="timeline-chevron">${icons.chevronDown}</div>` : ''}
+                    </div>
                   </div>
+                  ${exp.details ? `
+                  <div class="timeline-details-wrap">
+                    <div class="timeline-details">
+                      <div class="timeline-details-tags">
+                        ${exp.details.mcu ? `<span class="timeline-tag">${icons.cpu}${exp.details.mcu}</span>` : ''}
+                        ${exp.details.language ? `<span class="timeline-tag">${icons.code2}${exp.details.language}</span>` : ''}
+                      </div>
+                      <ul class="timeline-resp-list">
+                        ${exp.details.responsibilities.map(r => `<li>${r}</li>`).join('')}
+                      </ul>
+                    </div>
+                  </div>` : ''}
                 </div>
               </div>
             `).join('')}
@@ -444,6 +459,20 @@ function renderExperience() {
       </div>
     </div>
   `;
+
+  section.querySelectorAll('.timeline-card[role="button"]').forEach(card => {
+    const toggle = () => {
+      const open = card.classList.toggle('is-open');
+      card.setAttribute('aria-expanded', String(open));
+    };
+    card.addEventListener('click', toggle);
+    card.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        toggle();
+      }
+    });
+  });
 
   reveal(section.querySelector('.section-title'));
   section.querySelectorAll('.timeline-item').forEach((el, i) => reveal(el, { delay: Math.min(i * 60, 400) }));

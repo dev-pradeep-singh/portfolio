@@ -10,8 +10,8 @@ const profileData = {
   email: "pradeepsingh@example.com",
   phone: "+49-15163733485",
   linkedin: "https://www.linkedin.com/in/pradeepsinghembeddedengineer",
-  github: "https://github.com/PradeepSingh-Git",
-  resumeUrl: "https://customer-assets.emergentagent.com/job_09ec7e19-ef7c-4caa-94a9-9dd82346df4f/artifacts/8hlggv5p_PradeepSingh-SeniorEmbeddedSoftwareDeveloper.pdf",
+  github: "https://github.com/dev-pradeep-singh",
+  resumeUrl: "assets/docs/cv/CV_PradeepSingh_SeniorEmbeddedEngineer.pdf",
   profileImage: "assets/img/profile.jpg"
 };
 
@@ -132,17 +132,41 @@ const experienceData = [
     id: 1,
     company: "Luxoft GmbH",
     location: "Munich, Germany",
-    position: "Senior Software Developer",
+    position: "Domain Lead",
     period: "Feb 2022 - Present",
-    project: "BMW IPBasis"
+    project: "BMW IPBasis - Body & Gateway ECU",
+    details: {
+      mcu: "Stellar G7, S32G3 (ARM Cortex-M4)",
+      language: "Embedded C/C++",
+      responsibilities: [
+        "Architected a modular firmware stack (MCAL → BSW → RTE → Application) for the BMW Body/Gateway ECU, enabling scalable integration of 15+ software components across the AUTOSAR platform.",
+        "Designed BSP-level peripheral drivers and RTOS-based task scheduling (FreeRTOS), cutting CPU load by ~18% under peak communication load.",
+        "Led export and integration of MATLAB/Simulink control algorithms into the embedded framework with bit-accurate traceability to system requirements in IBM DOORS.",
+        "Maintained and optimized GitLab/Jenkins CI/CD pipelines (automated build, static analysis, regression tests), reducing regression defects by 35%.",
+        "Built and owned a Python-based Automated ECU Test Framework (AETF) spanning CAN/LIN, HW I/O, and Lauterbach debugger scripting, cutting validation cycle time by 50%.",
+        "Mentored a cross-functional team of 10+ engineers on firmware development, debugging, and MISRA C coding standards.",
+        "Led daily standups and change-request planning with BMW stakeholders."
+      ]
+    }
   },
   {
     id: 2,
     company: "Luxoft GmbH",
     location: "Munich, Germany",
-    position: "Senior Software Developer",
+    position: "Domain Lead",
     period: "Dec 2019 - Jan 2022",
-    project: "BMW BCP21"
+    project: "BMW BCP21 - Body & Gateway ECU",
+    details: {
+      mcu: "SPC58NH92 (PowerPC)",
+      language: "Embedded C/C++",
+      responsibilities: [
+        "Drove full lifecycle development of AUTOSAR-compliant Body & Comfort application modules, from requirements analysis in IBM DOORS through unit test and in-vehicle validation.",
+        "Designed and maintained bootloader integration and the firmware update sequence for a multi-core PowerPC ECU, aligned with BMW flashing standards.",
+        "Implemented and enforced a GTest/GMock unit-testing strategy in CI/CD, achieving >90% code coverage on new modules.",
+        "Performed HIL and in-vehicle debugging with Lauterbach TRACE32 and CANoe, validating 200+ test cases with 98% requirement coverage.",
+        "Acted as primary liaison with OEM stakeholders for architecture discussions, change-request planning, and sprint coordination."
+      ]
+    }
   },
   {
     id: 3,
@@ -150,7 +174,19 @@ const experienceData = [
     location: "Pune, India",
     position: "Technical Lead",
     period: "Jul 2017 - Nov 2019",
-    project: "JLR D8 BISG Inverter ECU"
+    project: "JLR D8 BISG Inverter ECU",
+    details: {
+      mcu: "MPC5744P, MPC5746x (PowerPC)",
+      language: "Embedded C",
+      responsibilities: [
+        "Led the BSW team configuring and integrating AUTOSAR COM (CAN, FlexRay), the DCM/DEM diagnostic stack (ISO 14229 / OBD-II), and the NvM memory stack in the KSAR toolchain.",
+        "Aligned BSW and application architecture to ISO 26262 ASIL-B, maintaining 100% bidirectional traceability across 300+ safety requirements.",
+        "Developed low-level SPI, I2C, DIO, PWM/ICU, and ADC peripheral drivers for motor-control and inverter interfaces.",
+        "Drove integration validation on HIL platforms, achieving >95% test coverage.",
+        "Managed and mentored a 5-person development team distributed across India and US engineering centers.",
+        "Acted as AUTOSAR technical authority, enforcing coding guidelines and best practices across 8+ engineers."
+      ]
+    }
   },
   {
     id: 4,
@@ -158,7 +194,18 @@ const experienceData = [
     location: "Pune, India",
     position: "Senior Software Engineer",
     period: "Aug 2017 - Jun 2018",
-    project: "VOLVO HCM Gen2"
+    project: "VOLVO HCM Gen2 - Headlight Control Module",
+    details: {
+      mcu: "Renesas RH850/F1x",
+      language: "Embedded C",
+      responsibilities: [
+        "Configured the AUTOSAR CAN stack and RTE signal mapping between application and BSW using DaVinci Configurator.",
+        "Maintained a CMake-based build environment for AUTOSAR-generated code.",
+        "Integrated AUTOSAR Port, DIO, and Watchdog modules; ran unit and integration testing on test bench and HIL setups.",
+        "Designed and executed automated integration tests with static code analysis, achieving high defect containment before system-level testing.",
+        "Performed board-level debugging and in-vehicle validation, reducing field issues during production release."
+      ]
+    }
   },
   {
     id: 5,
@@ -166,7 +213,18 @@ const experienceData = [
     location: "Pune, India",
     position: "Senior Software Engineer",
     period: "Jun 2016 - Jul 2017",
-    project: "JLR X590 Hybrid EV Charger"
+    project: "JLR X590 Hybrid EV Charger",
+    details: {
+      mcu: "MPC5744P, MPC5746x (PowerPC)",
+      language: "Embedded C",
+      responsibilities: [
+        "Implemented a bootloader from scratch for the secondary microcontroller, including linker-script authoring and S-record/Intel-hex binary merging.",
+        "Developed a custom secondary bootloader supporting UART-based firmware updates, accelerating validation cycles by 60%.",
+        "Validated end-to-end OTA download and reprogramming sequences against OEM flashing standards.",
+        "Built SPI, I2C, DIO, and PWM/ADC drivers for Control Pilot and Proximity Connection signals on the EV charging interface.",
+        "Designed linker scripts and optimized memory mapping for a dual-image (bootloader + application) architecture."
+      ]
+    }
   },
   {
     id: 6,
@@ -174,7 +232,19 @@ const experienceData = [
     location: "Pune, India",
     position: "Senior Software Engineer",
     period: "Jan 2014 - May 2016",
-    project: "Volkswagen BCM (PQ26)"
+    project: "Volkswagen PQ26 - Body Control Module",
+    details: {
+      mcu: "PowerPC MPC5646C",
+      language: "Embedded C/C++",
+      responsibilities: [
+        "Developed AUTOSAR 4.2-compliant SWC application software for the exterior/interior lights and wiper/washer system, in compliance with MISRA C.",
+        "Configured RTE mappings and validated signal interfaces between the application layer and BSW.",
+        "Modeled control logic in MATLAB/Simulink/Stateflow and generated production-ready C/C++ code via Embedded Coder.",
+        "Validated control algorithms through HIL (VeriStand) and SIL test automation, plus in-vehicle testing.",
+        "Supported ISO 26262 safety-concept alignment and safety reviews; performed design and code reviews.",
+        "Provided technical direction to the team, driving 100% requirements coverage, and presented technical solutions directly to the OEM."
+      ]
+    }
   },
   {
     id: 7,
@@ -182,7 +252,17 @@ const experienceData = [
     location: "Pune, India",
     position: "Software Engineer",
     period: "Apr 2013 - Dec 2013",
-    project: "Model-Based Development"
+    project: "Hyundai Body Control Module",
+    details: {
+      mcu: "PowerPC MPC5646C",
+      language: "Embedded C/C++, MATLAB/Simulink",
+      responsibilities: [
+        "Analyzed OEM system requirements and derived structured, traceable software specifications.",
+        "Modeled control logic for body-control functions in MATLAB/Simulink/Stateflow and auto-generated production C/C++ code.",
+        "Validated generated code against requirements via SIL and HIL (VeriStand) test automation.",
+        "Ensured MISRA C compliance and maintained traceability between the model, generated code, and requirements."
+      ]
+    }
   },
   {
     id: 8,
@@ -190,7 +270,17 @@ const experienceData = [
     location: "Pune, India",
     position: "Software Engineer",
     period: "Jun 2010 - Mar 2013",
-    project: "Freescale Automotive MCUs"
+    project: "Freescale Automotive MCUs",
+    details: {
+      mcu: "Freescale PowerPC MPC55xx / MPC56xx",
+      language: "Embedded C",
+      responsibilities: [
+        "Developed and validated BSP/MCAL-level peripheral driver initialization code for pre-production PowerPC microcontrollers, working directly from register-level reference manuals.",
+        "Validated tool-generated peripheral configuration code against target hardware.",
+        "Performed single- and multi-core debugging with the Lauterbach TRACE32 debugger.",
+        "Authored automated VBA/VB test scripts to support tool validation."
+      ]
+    }
   }
 ];
 
