@@ -230,7 +230,7 @@ function renderHero() {
   document.getElementById('btn-resume').addEventListener('click', () => window.open(profileData.resumeUrl, '_blank'));
   section.querySelectorAll('[data-scroll]').forEach(btn => btn.addEventListener('click', () => scrollToSection(btn.dataset.scroll)));
 
-  startIconSphere(document.getElementById('icon-sphere'));
+  startIconSphere(document.getElementById('icon-sphere'), document.querySelector('.hero-photo'));
 
   const orbBlue = document.getElementById('orb-blue');
   const orbEmerald = document.getElementById('orb-emerald');
@@ -277,7 +277,7 @@ function initTypewriter(el) {
 }
 
 /* ---------- Hero icon sphere ---------- */
-function startIconSphere(container) {
+function startIconSphere(container, photoEl) {
   const items = Array.from(container.children);
   const n = items.length;
   if (!n) return;
@@ -301,32 +301,63 @@ function startIconSphere(container) {
   window.addEventListener('resize', computeRadius);
 
   const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const speed = 0.80; // radians per second
+  const speed = 0.80; // radians per second, auto-spin while idle
+  const maxTilt = 0.6; // radians of extra rotation the mouse can pull in, each axis
 
-  function paint(angle) {
+  // yaw/pitch follow the mouse on top of the base auto-spin angle, which freezes
+  // while hovered so the two motions never fight each other.
+  function paint(yaw, pitch) {
     points.forEach(p => {
-      const rx = p.x * Math.cos(angle) - p.z * Math.sin(angle);
-      const rz = p.x * Math.sin(angle) + p.z * Math.cos(angle);
-      const scale = 0.55 + (rz + 1) / 2 * 0.75;
-      const opacity = 0.35 + (rz + 1) / 2 * 0.65;
-      p.el.style.transform = `translate(${rx * radius}px, ${p.y * radius}px) scale(${scale})`;
+      const rx = p.x * Math.cos(yaw) - p.z * Math.sin(yaw);
+      const rz = p.x * Math.sin(yaw) + p.z * Math.cos(yaw);
+      const ry = p.y * Math.cos(pitch) - rz * Math.sin(pitch);
+      const rz2 = p.y * Math.sin(pitch) + rz * Math.cos(pitch);
+      const scale = 0.55 + (rz2 + 1) / 2 * 0.75;
+      const opacity = 0.35 + (rz2 + 1) / 2 * 0.65;
+      p.el.style.transform = `translate(${rx * radius}px, ${ry * radius}px) scale(${scale})`;
       p.el.style.opacity = opacity;
-      p.el.style.zIndex = Math.round((rz + 1) * 100);
+      p.el.style.zIndex = Math.round((rz2 + 1) * 100);
     });
   }
 
   if (reduceMotion) {
-    paint(0.6);
+    paint(0.6, 0);
     return;
   }
 
+  let baseYaw = 0;
+  let yawOffset = 0;
+  let pitchOffset = 0;
+  let targetYawOffset = 0;
+  let targetPitchOffset = 0;
+  let hovering = false;
+
+  if (photoEl) {
+    const updateTarget = (e) => {
+      const rect = photoEl.getBoundingClientRect();
+      const dx = (e.clientX - (rect.left + rect.width / 2)) / (rect.width / 2);
+      const dy = (e.clientY - (rect.top + rect.height / 2)) / (rect.height / 2);
+      targetYawOffset = Math.max(-1, Math.min(1, dx)) * maxTilt;
+      targetPitchOffset = Math.max(-1, Math.min(1, -dy)) * maxTilt;
+    };
+    photoEl.addEventListener('mouseenter', (e) => { hovering = true; updateTarget(e); });
+    photoEl.addEventListener('mousemove', updateTarget);
+    photoEl.addEventListener('mouseleave', () => {
+      hovering = false;
+      targetYawOffset = 0;
+      targetPitchOffset = 0;
+    });
+  }
+
   let last = performance.now();
-  let angle = 0;
   function frame(now) {
     const dt = (now - last) / 1000;
     last = now;
-    angle += speed * dt;
-    paint(angle);
+    if (!hovering) baseYaw += speed * dt;
+    const ease = 1 - Math.exp(-dt * 6);
+    yawOffset += (targetYawOffset - yawOffset) * ease;
+    pitchOffset += (targetPitchOffset - pitchOffset) * ease;
+    paint(baseYaw + yawOffset, pitchOffset);
     requestAnimationFrame(frame);
   }
   requestAnimationFrame(frame);
