@@ -301,7 +301,7 @@ function startIconSphere(container) {
   window.addEventListener('resize', computeRadius);
 
   const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const speed = 0.18; // radians per second
+  const speed = 0.80; // radians per second
 
   function paint(angle) {
     points.forEach(p => {
